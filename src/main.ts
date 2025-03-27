@@ -1,6 +1,7 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { HttpExceptionFilter } from './common/filter/http-exception.filter';
 import { winstonLogger } from './common/utils/winston.config';
 
 async function bootstrap() {
@@ -16,6 +17,7 @@ async function bootstrap() {
       },
     }),
   );
+  app.useGlobalFilters(new HttpExceptionFilter(logger)); // 전역 예외처리
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();
