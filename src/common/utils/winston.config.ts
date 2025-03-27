@@ -16,7 +16,7 @@ const dailyOptions = {
   level: 'http',
   datePattern: 'YYYY-MM-DD',
   dirname: __dirname + '/../../../logs',
-  filename: `moneybuddy.log.%DATE%`,
+  filename: `awesomebros.log.%DATE%`,
   maxFiles: 30,
   zippedArchive: true,
   colorize: false,
